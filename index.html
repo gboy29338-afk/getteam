@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IPL Premium VIP</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: url('https://images.unsplash.com/photo-1607082349566-187342175e2f') no-repeat center/cover;
+    color: white;
+    text-align: center;
+}
+
+/* Overlay */
+.overlay {
+    background: rgba(0,0,0,0.7);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Glass Card */
+.card {
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 20px;
+    max-width: 350px;
+    margin: auto;
+}
+
+/* Title */
+h1 {
+    color: gold;
+}
+
+/* Rating */
+.rating {
+    color: gold;
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    margin: 12px auto;
+    padding: 15px;
+    width: 90%;
+    border-radius: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.buy {
+    background: linear-gradient(45deg, red, orange);
+}
+
+.telegram {
+    background: #0088cc;
+}
+
+/* Timer */
+.timer {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #ffcc00;
+}
+
+/* Seats */
+.seats {
+    color: #ff4444;
+    font-weight: bold;
+}
+
+/* Proof Images */
+.proof img {
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Popup */
+.popup {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: black;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+/* Floating Telegram */
+.float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0088cc;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+<div class="card">
+
+<h1>🔥 IPL VIP PREDICTION 🔥</h1>
+
+<div class="rating">⭐⭐⭐⭐⭐ 4.9/5 Trusted</div>
+<p>🔥 95% Winning Accuracy</p>
+
+<div class="seats">⏳ Only <span id="seat">25</span> Seats Left</div>
+
+<div class="timer">⏰ Offer Ends In: <span id="time"></span></div>
+
+<a href="https://postimg.cc/xc9RFXpT" class="btn buy">💰 Buy Now ₹499</a>
+<a href="https://shorturl.at/PJ1qu" class="btn telegram">📲 Join Telegram</a>
+
+</div>
+
+<!-- Proof Section -->
+<div class="proof">
+<h2>💸 Payment Proof</h2>
+<img src="https://via.placeholder.com/300x150">
+<img src="https://via.placeholder.com/300x150">
+</div>
+
+</div>
+
+<!-- Popup -->
+<div class="popup" id="popup"></div>
+
+<!-- Floating Button -->
+<a href="https://freeshort.info/L6xdHt" class="float">📲</a>
+
+<script>
+// TIMER
+var t = 900;
+setInterval(()=>{
+    var m = Math.floor(t/60);
+    var s = t%60;
+    document.getElementById("time").innerHTML = m+"m "+s+"s";
+    t--;
+    if(t<0) t=900;
+},1000);
+
+// SEATS DECREASE
+var seat = 25;
+setInterval(()=>{
+    if(seat > 5){
+        seat--;
+        document.getElementById("seat").innerText = seat;
+    }
+},8000);
+
+// FAKE BUY
+var names = [
+"Rahul (Delhi)",
+"Amit (Mumbai)",
+"Ravi (Patna)",
+"Sonu (Lucknow)",
+"Vikas (Jaipur)",
+"Ankit (Surat)",
+"Deepak (Bhopal)",
+"Karan (Pune)",
+"Rohit (Indore)",
+"Suresh (Chennai)",
+"Ajay (Kolkata)"
+];
+
+setInterval(()=>{
+    var rand = names[Math.floor(Math.random()*names.length)];
+    var pop = document.getElementById("popup");
+    pop.innerHTML = "🔥 "+rand+" just bought VIP Plan";
+    pop.style.display="block";
+    setTimeout(()=>{pop.style.display="none"},3000);
+},5000);
+</script>
+
+</body>
+</html>
